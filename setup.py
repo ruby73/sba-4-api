@@ -1,15 +1,19 @@
 import setuptools
-
-with open("READ<E.md", "r") as fh:
-    long_description = fh.read()
+# root directory 에서 pip install .
+with open("README.md","r", encoding= 'utf-8') as fh:
+    long_description  = fh.read()
 
 setuptools.setup(
-    name='com_sba_api', 
+    name='com_sba_api',
     version='1.0',
     description='Python Distribution Utilities',
+    long_description=long_description,
     author='parkeunsol',
     author_email='ouueyeb1@gmail.com',
-    url='https://www.python.org/sigs/distutils-sig/', # build 전에 수정할 것 
-    packages= setuptools.find_packages(),
-
+    url='https://www.python.org/sigs/distutils-sig/',
+    packages=setuptools.find_packages(),
+    python_requires='>=3.7'
 )
+
+# pip install --upgrade setuptools
+

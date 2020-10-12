@@ -1,12 +1,9 @@
 from flask import Flask, jsonify
+from flask_restful import Api
+from com_sba_api.ext.routes import initialize_routes
 
 app = Flask(__name__)
+api = Api(app)
 
-@app.route('/')
-def index():
-    return jsonify({"Hello": "Flask"})
 
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port='8080', debug=True)
-    
-    
+initialize_routes(api)
