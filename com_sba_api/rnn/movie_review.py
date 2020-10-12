@@ -7,12 +7,14 @@ from collections import defaultdict
 import math
 
 class MovieReview:
-    def __init__(self):
+    def __init__(self, k = 0.5):
+        self.k = k
         self.reader = FileReader()
 
     def hook(self):
         print('===== Hook =====')
-        self.load_corpus()
+        self.train()
+        print(self.classify('내 인생 최고의 명작..'))
 
     def load_corpus(self):
         reader = self.reader
