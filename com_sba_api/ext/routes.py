@@ -1,3 +1,3 @@
-from com_sba_api.food.food_api import FoodsApi
+from com_sba_api.item.item_api import ItemsApi
 def initialize_routes(api):
-    api.add_resource(FoodsApi, '/api/foods')
+    api.add_resource(ItemsApi, '/api/items')

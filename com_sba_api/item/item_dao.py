@@ -2,14 +2,14 @@ import mysql.connector
 from com_sba_api.ext.db import config
 
 
-class FoodDao:
+class ItemDao:
     
     def __init__(self):
         self.connector  = mysql.connector.connect(**config)
         self.cursor = self.connector.cursor(dictionary=True)
 
 
-    def select_foods(self):
+    def select_items(self):
         cur = self.cursor
         con = self.connector
         rows = []
@@ -29,5 +29,6 @@ class FoodDao:
         return rows
 
 print('---2---')
-dao = FoodDao()
-dao.select_foods()
+dao = ItemDao()
+dao.select_items()
+    
